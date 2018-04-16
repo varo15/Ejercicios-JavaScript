@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6 JavaScript</title>
+
+    <script>
+      function comprobar() {
+
+        var cent = parseInt(document.getElementById('cent').value,10);
+        cent = cent*9/5 + 32;
+
+        document.getElementById("far").value = cent;
+
+      }
+    </script>
+
+  </head>
+  <body>
+
+    <form>
+      Grados centírados:<br>
+      <input type="text" id="cent"><br>
+      Grados Fahrenheit:<br>
+      <input type="text" id="far" value="grados Fahrenheit"><br><br>
+      <input type="button" onclick="comprobar()" value="Convertir">
+    </form>
+
+  </body>
+</html>

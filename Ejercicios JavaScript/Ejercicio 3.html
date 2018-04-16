@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 3 Javascript</title>
+
+    <script>
+
+      var operador;
+      var num1;
+      var num2;
+
+      operador = prompt("Introduce 'sumar', 'restar', 'multiplicar', 'dividir'.");
+      num1 = parseInt(prompt("Primer numero."),10);
+      num2 = parseInt(prompt("Segundo numero."),10);
+
+      if (operador === "sumar"){
+
+        alert("Suma: "+ (num1 + num2));
+
+      }else if (operador === "restar") {
+
+        alert("Resta: "+ (num1 - num2));
+
+      }else if (operador === "multiplicar") {
+
+        alert("Multiplicacion: "+ (num1 * num2));
+
+      }else{
+
+        if (parseInt(num2,10) == 0) {
+          alert("No se puede dividir entre 0");
+        }else {
+          alert("Division: "+ (num1 / num2));
+        }
+      }
+
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+</html>

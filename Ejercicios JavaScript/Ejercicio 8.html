@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8 JavaScript</title>
+
+    <script>
+      function Convertir() {
+
+        var coin = parseInt(document.getElementById('coin').value);
+        coin = (coin * 1.2373);
+
+        document.getElementById("dolar").value = coin;
+      }
+    </script>
+
+  </head>
+  <body>
+    <h1> Conversor de Euros a Dolares</h1>
+    <form>
+      Euros:<br>
+      <input type="text" id="coin"><br>
+      Dolares:<br>
+      <input type="text" id="dolar"><br><br>
+      <input type="button" onclick="Convertir()" value="Convertir">
+    </form>
+
+  </body>
+</html>

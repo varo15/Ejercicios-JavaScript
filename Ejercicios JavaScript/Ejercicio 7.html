@@ -4,12 +4,47 @@
     <meta charset="utf-8">
     <title>Ejercicio 7 JavaScript</title>
     <script>
+        function calculadora() {
+          var num1 = parseInt(document.getElementById('num1').value);
+          var num2 = parseInt(document.getElementById('num2').value);
+          var operator = parseInt(document.getElementById('operator').value);
+          var res;
 
+          if (operator === '+') {
+              res = num1 + num2;
+          }else if (operator === '-') {
+              res = num1 - num2;
+          }else if (operator === '*') {
+              res = num1 * num2;
+          }else {
+            res = num1 / num2;
+          }
+
+          document.getElementById("res").value = res;
+
+        }
     </script>
   </head>
   <body>
 
+    <form>
+      <input type="text" id="num1">
+
+      <input list="operators" id='operator'>
+        <datalist id="operators">
+          <option value="+">
+          <option value="-">
+          <option value="*">
+          <option value="/">
+        </datalist>
+
+      <input type="text" id="num2">
+
+      <input type="button" onclick="calculadora()" value="Calcular"> <br><br>
+
+      <input type='text' id='res'>
+
+    </form>
+
   </body>
 </html>
-
-var valorIntroducido = document.getElementById("datos")

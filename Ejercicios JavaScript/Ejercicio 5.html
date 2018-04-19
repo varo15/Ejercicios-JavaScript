@@ -6,14 +6,30 @@
 
     <script>
     //var random = Math.floor((Math.random() * 5) + 1);
+    var conti = true;
 
-    for (var i = 0; i <= 5; i++) {
-      var num = parseInt(prompt("Adivina el numero."),10);
-      if (num == random) {
-        alert("Has acertado!!");
-        i=99;
+    while (conti === true) {
+      var random = Math.floor((Math.random() * 4) + 1);
+      for (var i = 0; i <= 2; i++) {
+        
+        var num = parseInt(prompt("Adivina el numero."));
+
+        if (num === random) {
+          alert("Has acertado!!");
+          break;
+          }
+        }
+        var conti = (prompt('¿Quieres seguir jugando? s/n'));
+        if (conti == 's') {
+          conti = true;
+          alert ('Preparado, listos, ya');
+        }else {
+          conti = false;
+          alert ('Hasta luego.');
+        }
       }
-    }
+
+
 
     </script>
 

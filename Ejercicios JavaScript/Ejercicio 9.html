@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 9</title>
+    <script>
+      function Coste() {
+        var numno = parseInt(document.getElementById('numno').value);
+        numno = numno * 140;
+        document.getElementById("coste").value = numno;
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      Introduce numero de noches:
+      <input type="text" id="numno">
+      <input type="button" onclick="Coste()" value="Calcular precio"> <br>
+
+      <input type="text" id="coste">
+
+    </form>
+
+  </body>
+</html>

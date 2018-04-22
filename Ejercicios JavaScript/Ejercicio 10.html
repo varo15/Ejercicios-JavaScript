@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio 10</title>
+    <script>
+      function costeAvion() {
+        var pciudad;
+        var noches;
+        var precio;
+        switch (expression) {
+          case 'Oviedo':
+              pciudad = 325;
+            break;
+          case 'Tokyo':
+              pciudad = 1200;
+            break;
+          case 'Madrid':
+              pciudad = 200;
+            break;
+          case 'Barcelona':
+              pciudad = 150
+            break;
+        }
+        if (noches >= 3) {
+          precio = pciudad * 0.9;
+          document.write(precio);
+        }else {
+          precio = pciudad;
+          document.write(precio);
+        }
+
+      }
+    </script>
+  </head>
+  <body>
+    <!Formulario ->
+    Numero de noches:
+    <input type="text" id="noches"><br><br>
+    Destino:
+    <input list="ciudad" id='coidad'>
+      <datalist id="ciudad">
+        <option value="Oviedo">
+        <option value="Tokyo">
+        <option value="Madrid">
+        <option value="Barcelona">
+      </datalist>
+
+    <br><br><input type="button" onclick="costeAvion()" value="Calcular"> <br><br>
+
+    <input type='text' id='precio'>
+  </body>
+</html>

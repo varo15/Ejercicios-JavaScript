@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 11</title>
+    <script>
+
+    function costeAqluilerCoche() {
+
+      var dias;
+      var dias = parseInt(document.getElementById('dias').value,10);
+
+      if (dias >=7) {
+        document.getElementById("precio").value = (dias * 40) - 50;
+      }else if (dias >=3 && dias <7) {
+        document.getElementById("precio").value = (dias * 40) - 20;
+      }else {
+        document.getElementById("precio").value = dias * 40;
+      }
+    }
+
+    document.getElementById("precio").value = precio;
+
+    </script>
+  </head>
+  <body>
+    <h1>Calcular precio alquiler coche </h1>
+    <form>
+      Dias:<br>
+      <input type="text" id="dias"><br>
+      Precio alquiler:<br>
+      <input type="text" id="precio"><br><br>
+      <input type="button" onclick="costeAqluilerCoche()" value="Calcular">
+    </form>
+  </body>
+</html>

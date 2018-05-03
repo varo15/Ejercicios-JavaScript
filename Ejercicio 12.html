@@ -1,43 +1,96 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
-    <title>Hermanos de Paco</title>
-    <script>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title>Hermanos de Paco</title>
+  <script>
 
 
-    </script>
+  </script>
 
-    <style>
+  <style>
 
-      body{
-          font-family: 'Libre Franklin', sans-serif;
-          color: grey;
-        }
-      body{
-          background-image: url(images/van.jpg);
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-size: cover;
-          background-color: #464646;
-      }
-      #header{
-          text-align: center;
-      }
+  html,body{
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    top:0;
+  }
+  #mainbox{
+    background-image: url(images/van.jpg); /*imagen de fondo*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; /*Hace que la fot se adapte al tamaño de la pagina */
+    background-color: #464646; /*Color de fondo por si la pagina tarda en cargar o la foto no cargase*/
+    /* Las siguientes lineas hacen que la div ocupe el 10o% de la pagina y se adapte quitando los bordes blancos superiores y laterales */
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+    position: fixed;
+    top:0;
+    left:0;
 
-    </style>
+    filter: grayscale(50%);
+    z-index: -1;
+  }
+
+  #header{
+    text-align: center;
+    font-size: 40px;
+    margin-top: -60px;
+
+  }
+  #header p{
+    margin-top: -55px;
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  #formTrip{
+    height: auto;
+    width: 20%;
+    background-color: rgba(157, 179, 104, 0.8);
+    /*background-color: rgba(46, 46, 46, 0.7);*/
+    margin-left: 10%;
+    margin-top: 11%;
+    padding: 1% 1% 1% 1%;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    filter: grayscale(40%);
+  }
+</style>
 </head>
 
 <body>
   <div id="mainbox">
+  </div>
+    <div id="header">
+      <h1 id="title"> Paco Viajes </h1>
+      <p id="slogan">Un buen viajero no tiene planes fijos, ni la intencion de llegar</p>
+    </div>
 
-  <div id="header">
-    <h1 id="title"> Paco Viajes </h1>
-    <p id="slogan">Un buen viajero no tiene planes fijos, ni la intencion de llegar</p>
-  </div>
-  </div>
+    <div id="formTrip">
+      <p>Rellena los campos y calcula tu viaje </p>
+      <!--Formulario 1-->
+
+      <!--FIN Formulario 1-->
+
+
+      <!--Formulario 2 -->
+
+      <!--FIN Formulario 2-->
+
+
+      <!--Formulario 3-->
+
+      <!--FIN Formulario 3-->
+    </div>
+
 
 </body>
 </html>

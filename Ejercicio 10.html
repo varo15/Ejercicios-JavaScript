@@ -8,37 +8,37 @@
         var pciudad;
         var noches;
         var precio;
+        var expression = document.getElementById("city").value;
         switch (expression) {
-          case 'Oviedo':
+          case "Oviedo":
               pciudad = 325;
             break;
-          case 'Tokyo':
+          case "Tokyo":
               pciudad = 1200;
             break;
-          case 'Madrid':
+          case "Madrid":
               pciudad = 200;
             break;
-          case 'Barcelona':
+          case "Barcelona":
               pciudad = 150
             break;
         }
         if (noches >= 3) {
           precio = pciudad * 0.9;
-          document.write(precio);
+          document.getElementById("precio").value = pciudad;
         }else {
-          precio = pciudad;
-          document.write(precio);
+          document.getElementById("precio").value = pciudad;
         }
 
       }
     </script>
   </head>
   <body>
-    <!Formulario ->
+    <!--Formulario -->
     Numero de noches:
     <input type="text" id="noches"><br><br>
     Destino:
-    <input list="ciudad" id='coidad'>
+    <input list="ciudad" id='city'>
       <datalist id="ciudad">
         <option value="Oviedo">
         <option value="Tokyo">

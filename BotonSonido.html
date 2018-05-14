@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Escucha la música</title>
+    <script>
+
+        var parar = false;
+
+        function play(){
+
+          var audio = document.getElementById("audio");
+            audio.play();
+          }
+
+        function pause(){
+          audio.pause();
+        }
+
+    </script>
+  </head>
+  <body>
+    <button onclick="play()">Play</button>
+    <button onclick="pause()">Pause</button>
+    <audio id="audio" src="media/audio/MonsterKill.mp3" type="audio/mp3"></audio>
+  </body>
+</html>

@@ -10,6 +10,7 @@
         var precio;
         var descuento = 0.9;
         var expression = document.getElementById("city").value;
+        var noches = document.getElementById("noches").value;
         switch (expression) {
           case "Oviedo":
               pciudad = 325;
@@ -26,7 +27,7 @@
         }
         if (noches >= 3) {
           precio = pciudad * descuento;
-          document.getElementById("precio").value = pciudad;
+          document.getElementById("precio").value = precio;
         }else {
           document.getElementById("precio").value = pciudad;
         }

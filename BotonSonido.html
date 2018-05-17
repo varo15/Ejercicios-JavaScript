@@ -10,6 +10,7 @@
           var audio = document.getElementById("audio");
             audio.loop=true;
             audio.play();
+            setTimeout(afterTwoSeconds, 2000);
           }
 
         function pause(){
@@ -19,9 +20,11 @@
     </script>
   </head>
   <body>
-    <!--button onclick="play()">Play</button -->
+    <button onclick="play()">Play</button>
 
     <audio controls id="audio" src="media/audio/MonsterKill.mp3" type="audio/mp3"></audio>
     <button onclick="pause()">Pause</button>
   </body>
 </html>
+
+prueba github

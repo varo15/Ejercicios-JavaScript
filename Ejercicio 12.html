@@ -72,7 +72,7 @@
   <div id="mainbox">
   </div>
     <div id="header">
-      <h1 id="title"> Paco Viajes </h1>
+      <h1 id="title"> Dream Trips </h1>
       <p id="slogan">Un buen viajero no tiene planes fijos, ni la intencion de llegar</p>
     </div>
 
@@ -80,11 +80,16 @@
       <p>Rellena los campos y calcula tu viaje </p>
       <!--Formulario 1-->
       <form>
-      Introduce numero de noches:
+      <p>Introduce numero de noches:</p>
       <input type="text" id="numeroNoches">
       <input type="button" onclick="Coste()" value="Calcular precio"> <br>
-
       <input type="text" id="costeViaje">
+
+      <p>¿Necesitas un coche?</p>
+      <input type="radio" id="carYes" name="carYes" value="text">
+      <label for="carYes">Si</label>
+      <input type="radio" id="carNo" name="carNo" value="text">
+      <label for="carNo">No</label>
 
     </form>
       <!--FIN Formulario 1-->

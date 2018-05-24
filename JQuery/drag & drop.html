@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+
+    #dropArea {
+      width: 400px;
+      height:400px;
+      padding: 10px;
+      padding-top: 30px;
+      border: 1px solid #aaaaaa;
+        }
+
+</style>
+  <script>
+    $(function(){
+      $("drag1").draggable();
+    });
+
+    $( function() {
+    $( "#drag1" ).draggable();
+    $( "#dropArea" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addclass( "class1" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  } );
+
+  </script>
+  </head>
+  <body>
+    <img id="drag1" src="https://i.ebayimg.com/images/g/p2IAAOSwgQ9VtN9u/s-l300.jpg">
+    <br>
+    <div id="dropArea" class="class1" ></div>
+  </body>
+</html>

@@ -1,99 +1,165 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <title>Hermanos de Paco</title>
+  <title>Dream Trips</title>
   <script>
+    function calcularViaje() {
+      //Guardamos en la variable numNoches el numero introducido en el formulario
+      var numeroNoches = parseInt(document.getElementById("numeroNoches").value);
+      //Guardamos el valor seleccionado en la lista de las ciudades para usarla posteriormente
+      var ciudad = document.getElementById("ciudad").value;
+      //Declaramos la variable pCoche = 0 por si no se marca el radioButton de "cocheSi"
+      var pCoche = 0;
+      //Declaramos la variable descuento que se utiliza al calcular pVuelo
+      var descuento = 0.9;
+      //Declaramos la variable precioNoche
+      var precioNoche = 140;
 
+      //Calcular precio del coche
+      //Si el boton cocheSi esta seleccionado, calculamos el precio del coche para ese numero de noches
+      // aplicando el descuento que fuese ncesario en funcion de los dias
+      if (document.getElementById("cocheSi").checked) {
+        if (numeroNoches >= 7) {
+          pCpche = (numeroNoches * 40) - 50;
+        } else if (numeroNoches >= 3 && numeroNoches < 7) {
+          pCoche = (numeroNoches * 40) - 20;
+        } else {
+          pCoche = numeroNoches * 40;
+        }
+      }
+      //FIN calcular precio coche
+      //Calcular precio avion
+      //Utilizamos la variable ciudades para seleccionar el valor de pVuelo en el switch
+      switch (ciudad) {
+        case "Oviedo":
+          pVuelo = 325;
+          break;
+        case "Tokyo":
+          pVuelo = 1200;
+          break;
+        case "Madrid":
+          pVuelo = 200;
+          break;
+        case "Barcelona":
+          pVuelo = 150
+          break;
+      }
+      //Si numeroNoches es mayor o igual a 3, se aplica el descuento que declaramos arriba
+      if (numeroNoches >= 3) {
+        pVuelo = pVuelo * descuento;
+      }
+      //FIN calcular precio costeAvion
 
+      //Calculamos el precio total del viaje sumando las distintas variables que fuimos calculando
+      numeroNoches = numeroNoches * precioNoche + pCoche + pVuelo;
+      document.getElementById("costeViaje").value = numeroNoches;
+    }
   </script>
-
   <style>
+    html,
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      color: grey;
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      top: 0;
+    }
 
-  html,body{
-    font-family: 'Roboto', sans-serif;
-    color: grey;
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    top:0;
-  }
-  #mainbox{
-    background-image: url(images/van.jpg); /*imagen de fondo*/
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; /*Hace que la fot se adapte al tamaño de la pagina */
-    background-color: #464646; /*Color de fondo por si la pagina tarda en cargar o la foto no cargase*/
-    /* Las siguientes lineas hacen que la div ocupe el 10o% de la pagina y se adapte quitando los bordes blancos superiores y laterales */
-    width: 100%;
-    min-height: 100%;
-    height: auto !important;
-    position: fixed;
-    top:0;
-    left:0;
+    #mainbox {
+      background-image: url(images/van.jpg);
+      /*imagen de fondo*/
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      /*Hace que la foto se adapte al tamaño de la pagina */
+      background-color: #464646;
+      /*Color de fondo por si la pagina tarda en cargar o la foto no cargase*/
+      /* Las siguientes lineas hacen que la div ocupe el 10o% de la pagina y se adapte quitando los bordes blancos superiores y laterales */
+      width: 100%;
+      min-height: 100%;
+      height: auto !important;
+      position: fixed;
+      top: 0;
+      left: 0;
 
-    filter: grayscale(50%);
-    z-index: -1;
-  }
+      filter: grayscale(50%);
+      z-index: -1;
+    }
 
-  #header{
-    text-align: center;
-    font-size: 40px;
-    margin-top: -60px;
+    #header {
+      text-align: center;
+      font-size: 40px;
+      margin-top: -60px;
 
-  }
-  #header p{
-    margin-top: -55px;
-    font-size: 20px;
-    font-style: italic;
-  }
+    }
 
-  #formTrip{
-    height: auto;
-    width: 20%;
-    background-color: rgba(157, 179, 104, 0.8);
-    /*background-color: rgba(46, 46, 46, 0.7);*/
-    margin-left: 10%;
-    margin-top: 11%;
-    padding: 1% 1% 1% 1%;
-    color: white;
-    border-radius: 10px;
-    text-align: center;
-    filter: grayscale(40%);
-  }
+    #header p {
+      margin-top: -55px;
+      font-size: 20px;
+      font-style: italic;
+    }
 
-  /*-------------------------------------------*/
-</style>
+    #formTrip {
+      height: auto;
+      width: 20%;
+      background-color: rgba(157, 179, 104, 0.8);
+      /*background-color: rgba(46, 46, 46, 0.7);*/
+      margin-left: 10%;
+      margin-top: 11%;
+      padding: 1% 1% 1% 1%;
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+      filter: grayscale(40%);
+    }
+
+    /*-------------------------------------------*/
+  </style>
 </head>
 
 <body>
   <div id="mainbox">
   </div>
-    <div id="header">
-      <h1 id="title"> Dream Trips </h1>
-      <p id="slogan">Un buen viajero no tiene planes fijos, ni la intencion de llegar</p>
-    </div>
+  <div id="header">
+    <h1 id="title"> Dream Trips </h1>
+    <p id="slogan">Un buen viajero no tiene planes fijos, ni la intencion de llegar</p>
+  </div>
 
-    <div id="formTrip">
-      <p>Rellena los campos y calcula tu viaje </p>
-      <!--Formulario 1-->
-      <form>
+  <div id="formTrip">
+    <p style="font-size:30px;">Rellena los campos y calcula tu viaje </p>
+    <!--Formulario 1-->
+    <form>
       <p>Introduce numero de noches:</p>
       <input type="text" id="numeroNoches">
-      <input type="button" onclick="Coste()" value="Calcular precio"> <br>
-      <input type="text" id="costeViaje">
-
+      <br>
+      <p>Destino:</p>
+      <select id="ciudad">
+          <option value="Oviedo">Oviedo</option>
+          <option value="Tokyo">Tokyo</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Barcelona">Barcelona</option>
+        </select>
+      <br>
       <p>¿Necesitas un coche?</p>
-      <input type="radio" id="carYes" name="carYes" value="text">
-      <label for="carYes">Si</label>
-      <input type="radio" id="carNo" name="carNo" value="text">
-      <label for="carNo">No</label>
 
+      <label for="si">Si</label>
+      <input type="radio" name="coche" id="cocheSi" value="si">
+      <label for="no">No</label>
+      <input type="radio" name="coche" id="cocheNo" value="no" checked>
+      <br><br>
+      <input type="button" onclick="calcularViaje()" value="Calcular">
+      <p>Precio final de tu viaje</p>
+      <input type="text" id="costeViaje" value="coste viaje">
     </form>
-      <!--FIN Formulario 1-->
+    <!--FIN Formulario 1-->
 
 
 </body>
+
 </html>

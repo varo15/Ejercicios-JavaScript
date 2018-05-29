@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 13</title>
+  <!-- Declaramos el CSS en el mismo documento por comodidad -->
+  <style>
+    body {
+      background-color: #dcdfe2;
+    }
+  </style>
+
+  <!--Declaramos el JS  -->
+  <script>
+    //Declaramos la funcion que se llamara al apretar el boton
+    function showAlert() {
+      //guardamos en la variable 'name' el valor introducido por el formulario
+      var name = document.getElementById('name').value;
+      //si se enviase en blanco el formulario mostramos un alert que notifique al usuario de su error
+      //para ello comprobamos la longitud de la cadena guardada en la variable 'name'
+      //si no, mostramos el nombre dando la bienvenida al usuario.
+      if (name.length == 0) {
+        alert("Introduce un nombre en el formulario");
+      } else {
+        alert("Bienvenido " + name);
+      }
+    }
+  </script>
+
+
+</head>
+
+<body>
+  <h1>Utiliza el método document.getElementById() para mostrar el valor del cuadro de texto con alert</h1>
+  <label>Escribe tu nombre, por favor:</label>
+  <input type="text" id="name" />
+  <input type="button" value="Enviar formulario" onclick="showAlert()" />
+</body>
+
+</html>

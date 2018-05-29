@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 14</title>
+  <!-- Abrimos las etiquetas de CSS -->
+  <style>
+  </style>
+  <!-- Abrimos las etiquetas de JS -->
+  <script>
+    //Declarar la funcion
+    function processData() {
+      //Declarar variables
+      var name = document.getElementById("name").value;
+      var boxType = document.getElementById("boxType").value;
+      var size = "";
+      //Controlar que no se deje el nombre en blanco
+      if (name.length == 0) {
+        alert("Introduce un nombre");
+      } else {
+        //Controlar que tamaño se slecciona
+        if (document.getElementById("radioDiminuta").checked) {
+          size = document.getElementsByClassName("radioDiminuta").value;
+        } else if (document.getElementById("radioMediana").checked) {
+          size = document.getElementById("radioMediana").value;
+        } else {
+          size = document.getElementById("radioGrande").value;
+        }
+
+        //Mostrar alerta
+        alert(size);
+        alert(name + " ha pedido una caja de " + boxType + " con unas dimensiones " + size);
+      }
+
+    }
+  </script>
+</head>
+<h1> Creacion de un formulario html con Javascript para recoger y procesar los datos</h1>
+
+<!-- Nombre del cliente -->
+<label> Nombre del cliente:</label><br />
+<input type="text" id="name">
+
+<!-- Material de la caja -->
+<label> Material de la caja: </label>
+<br />
+<br />
+<label> Material de la caja: </label>
+<select id="boxType">
+    <option value="madera">Madera</option>
+    <option value="cartón">Cartón</option>
+  </select>
+<!--dimensiones de la caja -->
+<br /><label> Seleccione las dimensiones para la caja:</label><br />
+
+<input type="radio" id="radioDiminuta" value="diminuta" name="tamaño" />
+<label>Diminuta</label>
+<br />
+<input type="radio" id="radioMediana" value="mediana" name="tamaño" />
+<label>Mediano</label>
+<br />
+<input type="radio" id="radioGrande" value="grande" name="tamaño" />
+<label>Grande</label>
+<br />
+<!--Comentarios  -->
+<label>Comentarios</label>
+<br />
+<textarea rows="4" cols="50" id="textarea"></textarea>
+<br />
+<input type="button" onclick="processData()" value="Enviar" />
+
+<body>
+
+</body>
+
+</html>

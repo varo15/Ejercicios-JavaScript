@@ -16,24 +16,40 @@
 -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <!-- Cargamos Javascript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <script>
+<head>
+  <meta charset="utf-8">
+  <title>Juego didáctico</title>
+  <!-- Cargamos Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Cargamos el archivo externo de JavaScript -->
+  <script type="text/javascript" src="js/script.js"></script>
+  <!-- Cargamos el CSS -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Cargamos un estilo de letra desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-    $(function(){
-      $('.btn').click(function(){
-        if($(this).attr('src') == $(/*'id de la foto a acertar'*/).attr('src')){
+</head>
 
-        }
-      })
-    })
-    </script>
-  </head>
-  <body>
+<body>
+  <!-- Aqui se pide la informacion del jugador -->
+  <div id="landing">
+    <h1> Super Mega Mix Monster for Students</h1>
+    <label>Nombre jugador: </label>
+    <input type="text" id="name"/>
+    <br />
+    <br />
+    <label> Edad: </label>
+    <input type="number" id="age"/>
+    <br />
+    <br />
+    <br />
+    <input type="button" value="¡Empezar!" onclick="launchGame()"/>
+  </div>
 
-  </body>
+  <div id="mainContent">
+
+  </div>
+</body>
+
 </html>

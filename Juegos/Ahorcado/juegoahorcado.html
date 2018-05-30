@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//Dtd HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.uv.es/~jac/guia/jscript/palabras.htm -->
+<HTML>
+
+<head>
+  <script type="text/javascript" src="javascript.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Oswald|Roboto" rel="stylesheet">
+  <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+  <title>Ahorcado Online</title>
+  <meta content="MSHTML 6.00.2900.2802" name=GENERATOR>
+</head>
+
+<body>
+  <h1 id="error">ERROR 418 NO PUEDES CON UNA PANTALLA TAN PEQUEÑA</h1>
+  <div id="pop">
+    <h1 id="titstart">Introduce un nombre de usuario<h1>
+    <input type="text" id="usuario">
+    <br>
+    <input type="submit" value="Jugar!" id="empezar" onclick="empezar()">
+  </div>
+  <div id="titulo">
+    <h1 id="tit">JUEGO DEL AHORCADO</h1>
+    <h2 id="tit2"></h2>
+  </div>
+  <div id="contenedor">
+    <div id="contenido">
+    <form name=visor>
+      <center>
+        <table width=547>
+          <tbody>
+            <tr>
+                <td align=middle width="150" colSpan=3><textarea readonly name=displayHombre rows=6 cols=15></textarea readonly>
+                  <td align=middle width="150" colSpan=3><textarea readonly name=displayLetras rows=6 cols=15></textarea readonly>
+                    <td width=200>
+              <div id="botones">
+                Ganadas: <input size=4 value=0 name=ganadas readonly>
+                <br>
+                <br> Perdidas:
+                <input size=4 value=0 name=perdidas readonly>
+                <br>
+                <br>
+                <input onclick=IniciaJuego(this.form) type=button value="  Juego nuevo   " name=Inicia id="nuevojuego">
+                <br>
+                <br>
+                <input onclick="this.form.ganadas.value='0'; this.form.perdidas.value='0'" type=button value=Limpiar name=B1 id="limpiar">
+              </div>
+              <tr>
+                <td align=middle width=300 colSpan=6><input size=42 name=displayPalabra id="resultado">
+                  <td align=middle>&nbsp;
+                    <tr>
+                      <td align=middle width=50><input onclick="Juega(this.form, 'a')" type=button value=" A " name=botA>
+
+                        <td align=middle width=50><input onclick="Juega(this.form, 'b')" type=button value=" B " name=botB>
+
+                          <td align=middle width=50><input onclick="Juega(this.form, 'c')" type=button value=" C " name=botC>
+
+                            <td align=middle width=50><input onclick="Juega(this.form, 'd')" type=button value=" D " name=botD>
+
+                              <td align=middle width=50><input onclick="Juega(this.form, 'e')" type=button value=" E " name=botE>
+
+                                <td align=middle width=50><input onclick="Juega(this.form, 'f')" type=button value=" F " name=botF>
+
+                                  <td>
+                                    <tr>
+                                      <td align=middle><input onclick="Juega(this.form, 'g')" type=button value=" G " name=botG>
+
+                                        <td align=middle><input onclick="Juega(this.form, 'h')" type=button value=" H " name=botH>
+
+                                          <td align=middle><input onclick="Juega(this.form, 'i')" type=button value=" I " name=botI>
+
+                                            <td align=middle><input onclick="Juega(this.form, 'j')" type=button value=" J " name=botJ>
+
+                                              <td align=middle><input onclick="Juega(this.form, 'k')" type=button value=" K " name=botK>
+
+                                                <td align=middle><input onclick="Juega(this.form, 'l')" type=button value=" L " name=botL>
+
+
+
+                                                  <tr>
+                                                    <td align=middle><input onclick="Juega(this.form, 'm')" type=button value=" M " name=botM>
+
+                                                      <td align=middle><input onclick="Juega(this.form, 'n')" type=button value=" N " name=botN>
+
+                                                        <td align=middle><input onclick="Juega(this.form, 'ñ')" type=button value=" Ñ " name=botÑ>
+
+                                                          <td align=middle><input onclick="Juega(this.form, 'o')" type=button value=" O " name=botO>
+
+                                                            <td align=middle><input onclick="Juega(this.form, 'p')" type=button value=" P " name=botP>
+
+                                                              <td align=middle><input onclick="Juega(this.form, 'q')" type=button value=" Q " name=botQ>
+
+
+                                                                <tr>
+                                                                  <td align=middle><input onclick="Juega(this.form, 'r')" type=button value=" R " name=botR>
+
+                                                                    <td align=middle><input onclick="Juega(this.form, 's')" type=button value=" S " name=botS>
+
+                                                                      <td align=middle><input onclick="Juega(this.form, 't')" type=button value=" T " name=botT>
+
+                                                                        <td align=middle><input onclick="Juega(this.form, 'u')" type=button value=" U " name=botU>
+
+                                                                          <td align=middle><input onclick="Juega(this.form, 'v')" type=button value=" V " name=botV>
+
+                                                                            <td align=middle><input onclick="Juega(this.form, 'w')" type=button value=" W " name=botW>
+
+                                                                              <td>
+                                                                                <tr>
+                                                                                  <td align=middle><input onclick="Juega(this.form, 'x')" type=button value=" X " name=botX>
+
+                                                                                    <td align=middle><input onclick="Juega(this.form, 'y')" type=button value=" Y " name=botY>
+
+                                                                                      <td align=middle><input onclick="Juega(this.form, 'z')" type=button value=" Z " name=botZ>
+
+
+                                                                                </tr>
+          </tbody>
+        </table>
+      </center>
+    </form>
+  </div>
+  </div>
+
+  <center>
+    <!--<h3>[<a href="http://www.uv.es/~jac/guia/jscript/javascr.htm">Volver</a>]</h3>-->
+  </center>
+</body>
+
+</html>

@@ -26,28 +26,53 @@
   <script type="text/javascript" src="js/script.js"></script>
   <!-- Cargamos el CSS -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
-<!-- Cargamos un estilo de letra desde Google Fonts -->
+  <!-- Cargamos un estilo de letra desde Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 </head>
 
 <body>
+  <!-- Iniciamos la musica del juego -->
+  <audio controls >
+  <source src="audio/ori.mp3" type="audio/mp3">
+</audio>
   <!-- Aqui se pide la informacion del jugador -->
   <div id="landing">
     <h1> Super Mega Mix Monster for Students</h1>
     <label>Nombre jugador: </label>
-    <input type="text" id="name"/>
+    <input type="text" id="name" />
     <br />
     <br />
     <label> Edad: </label>
-    <input type="number" id="age"/>
+    <input type="text" id="age" />
     <br />
     <br />
     <br />
-    <input type="button" value="¡Empezar!" onclick="launchGame()"/>
+    <input type="button" value="¡Empezar!" onclick="launchGame()">
   </div>
 
   <div id="mainContent">
+    <h1>¡Adivina el lenguaje de programación!</h1>
+
+    <div id="container">
+      <div>
+        <img id="log1" src="images/logohtml.png">
+      </div>
+      <div>
+        <img id="log2" src="images/logocss.png">
+      </div>
+      <div>
+        <img id="log3" src="images/logojava.png">
+      </div>
+      <div>
+        <img id="log4" src="images/logojavascript.png">
+      </div>
+      <div>
+        <img id="log5" src="images/logophp.png">
+      </div>
+    </div>
+
+    <img id="codigo" src="images/javascript.jpg">
 
   </div>
 </body>

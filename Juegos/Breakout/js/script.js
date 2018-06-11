@@ -39,7 +39,16 @@ for (c = 0; c < brickColumnCount; c++) {
   }
 }
 
+//declaramos la variable para el contador de puntos
+var score = 0;
+
+//declaramos la variable que cuenta las vidas dandole un valor inicial
+var lives = 3;
+
 // -------- FIN DECLARACION VARIABLES -------- //
+
+
+
 
 //creamos una funcion que dibja la bola
 function drawBall() {
@@ -78,6 +87,20 @@ function drawBricks() {
   }
 }
 
+//creamos la funcion que dibuja la puntuacion
+function drawScore() {
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#0095DD";
+  ctx.fillText("Score: " + score, 8, 20);
+}
+
+//creamos la funcion que dibuja las vidas
+function drawLives() {
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#0095DD";
+  ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
+}
+
 //creamos una funcion que ira dibujando y actualizandose cada 10 milisegundos
 function draw() {
 
@@ -86,6 +109,12 @@ function draw() {
 
   //llamamos a la funcion que dibuja la paleta
   drawPaddle();
+
+  //llamamos a la funcion que dibuja la puntuacion
+  drawScore();
+
+  //llamamos a la funcion que dibuja las vidas
+  drawLives();
 
   //llamamos la funcion que detecta las colisiones entre la pelota y los ladrillos
   collisionDetection();
@@ -112,8 +141,17 @@ function draw() {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
     } else {
-      alert("GAME OVER");
-      document.location.reload();
+      lives--;
+      if (!lives) {
+        alert("GAME OVER");
+        document.location.reload();
+      } else {
+        x = canvas.width / 2;
+        y = canvas.height - 30;
+        dx = 2;
+        dy = -2;
+        paddleX = (canvas.width - paddleWidth) / 2;
+      }
     }
   }
 
@@ -129,13 +167,23 @@ function draw() {
   } else if (leftPressed && paddleX > 0) {
     paddleX -= 7;
   }
-
+  requestAnimationFrame(draw);
 }
 
 
 //Con estos listeners, obtenemos respuesta cuando las teclas se pulsan
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+//Con este listener detectamos el movimiento del raton
+document.addEventListener("mousemove", mouseMoveHandler, false);
+
+//declaramos la funcion que permite mover la paleta con el raton
+function mouseMoveHandler(e) {
+  var relativeX = e.clientX - canvas.offsetLeft;
+  if (relativeX > 0 && relativeX < canvas.width) {
+    paddleX = relativeX - paddleWidth / 2;
+  }
+}
 
 function keyDownHandler(e) {
   if (e.keyCode == 39) {
@@ -162,10 +210,15 @@ function collisionDetection() {
         if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
           dy = -dy;
           b.status = 0;
+          score++;
+          if (score == brickRowCount * brickColumnCount) {
+            alert("Que bueno que ganaste");
+            document.location.reload();
+          }
         }
       }
     }
   }
 }
 
-setInterval(draw, 10); //intervalo de actualizacion de la funcion 'draw'
+draw();

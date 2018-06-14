@@ -237,10 +237,18 @@ function collisionDetection() {
 
 function launchGame() {
   var name = document.getElementById('name').value;
+  //controlamos un posible error
+  //dejar el nombre en blanco
+  if (name.length == 0) {
+    document.getElementById('errorLabel').style.visibility = 'visible';
+  }else{
   document.getElementById('landing').style.height = '0px';
   document.getElementById("landing").style.width = "0px";
+  document.getElementById('myCanvas').style.visibility = 'visible';
+
   //aplicamos un delay de 1 segundos antes de mepezar el juego
   setTimeout(function() {
     draw()
   }, 1000);
+}
 } //FIN funcion launchGame

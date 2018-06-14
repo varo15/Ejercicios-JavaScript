@@ -3,27 +3,37 @@
   margin: 0;
 }
 
+body {
+  background: rgba(76, 76, 76, 1);
+  font-family: 'Roboto', sans-serif;
+}
+
 canvas {
   background: #eee;
   display: block;
   margin: 10% auto;
-  z-index: 0;
+  visibility: hidden;
+  
 }
 
 #landing {
-  padding-top: 1%;
+  padding-top: 4%;
   padding-bottom: 2%;
-  margin-left: 35%;
+  margin-left: 25%;
   margin-top: -20%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
-  background-color: #d5d6d6;
-  width: 30%;
-  height: 20%;
+  background: rgba(226, 226, 226, 1);
+  width: 50%;
+  height: 25%;
   border-radius: 10px;
   overflow: hidden;
   position: absolute;
-  z-index: 1;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#landing h1 {
+  font-size: 65px;
 }
 
 #gameOver {
@@ -39,4 +49,35 @@ canvas {
   border-radius: 10px;
   overflow: hidden;
   position: absolute;
+}
+
+.button {
+  background: #797a79;
+    background-image: -webkit-linear-gradient(top, #797a79, #5a5e5a);
+    background-image: -moz-linear-gradient(top, #797a79, #5a5e5a);
+    background-image: -ms-linear-gradient(top, #797a79, #5a5e5a);
+    background-image: -o-linear-gradient(top, #797a79, #5a5e5a);
+    background-image: linear-gradient(to bottom, #797a79, #5a5e5a);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    text-shadow: 1px 1px 3px #666666;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.button:hover {
+  background: #99bd7b;
+  background-image: -webkit-linear-gradient(top, #99bd7b, #6bab6a);
+  background-image: -moz-linear-gradient(top, #99bd7b, #6bab6a);
+  background-image: -ms-linear-gradient(top, #99bd7b, #6bab6a);
+  background-image: -o-linear-gradient(top, #99bd7b, #6bab6a);
+  background-image: linear-gradient(to bottom, #99bd7b, #6bab6a);
+  text-decoration: none;
 }

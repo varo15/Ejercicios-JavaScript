@@ -6,6 +6,7 @@
   <title>Super Mega Breakout</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 </head>
 
@@ -25,14 +26,13 @@
     <input type="text" id="name" />
     <br />
     <br />
+    <p id="errorLabel" style="color:red; visibility:hidden;">
+      Debes introducir un nombre.
+    </p>
     <br />
-    <input type="button" value="¡Empezar!" onclick="launchGame()">
+    <input type="button" class="button" value="¡Empezar!" onclick="launchGame()">
   </div>
 
-  <div id="gameOver">
-    <h2> Perdiste, toca el boton para jugar de nuevo</h2>
-    <input type="button" value="Volver a jugar" onclick="launchGame()">
-  </div>
 </body>
 
 <script src="js/script.js"></script>

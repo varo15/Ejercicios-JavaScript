@@ -5,15 +5,34 @@
   <meta charset="utf-8" />
   <title>Super Mega Breakout</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
 <body>
 
-  <canvas id="myCanvas" width="480" height="320"></canvas>
+  <!-- <audio autoplay>
+    <source src="songs/ori.mp3" type="audio/mp3">
+  </audio> -->
 
+  <canvas id="myCanvas" width="820" height="320"></canvas>
 
+  <div id="landing">
+    <h1> Super Mega Breakout</h1>
+    <br />
+    <br />
+    <label>Nombre jugador: </label>
+    <input type="text" id="name" />
+    <br />
+    <br />
+    <br />
+    <input type="button" value="¡Empezar!" onclick="launchGame()">
+  </div>
 
+  <div id="gameOver">
+    <h2> Perdiste, toca el boton para jugar de nuevo</h2>
+    <input type="button" value="Volver a jugar" onclick="launchGame()">
+  </div>
 </body>
 
 <script src="js/script.js"></script>

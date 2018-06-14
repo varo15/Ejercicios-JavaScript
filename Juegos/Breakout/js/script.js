@@ -5,12 +5,12 @@ var ctx = canvas.getContext("2d");
 //definimos X e Y para posicionar la bola
 var x = canvas.width / 2;
 var y = canvas.height - 30;
-var dx = 2;
-var dy = -2;
+var dx = 3;
+var dy = -3;
 var ballRadius = 10;
 
 //definimos la paleta que movera el usuario
-var paddleHeight = 10;
+var paddleHeight = 15;
 var paddleWidth = 75;
 var paddleX = (canvas.width - paddleWidth) / 2;
 
@@ -20,7 +20,7 @@ var leftPressed = false;
 
 //declaramos las variables necesarias para los ladrillos
 var brickRowCount = 3;
-var brickColumnCount = 5;
+var brickColumnCount = 9;
 var brickWidth = 75;
 var brickHeight = 20;
 var brickPadding = 10;
@@ -44,6 +44,9 @@ var score = 0;
 
 //declaramos la variable que cuenta las vidas dandole un valor inicial
 var lives = 3;
+
+//declaramos variables de audio
+
 
 // -------- FIN DECLARACION VARIABLES -------- //
 
@@ -101,6 +104,8 @@ function drawLives() {
   ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
 }
 
+
+
 //creamos una funcion que ira dibujando y actualizandose cada 10 milisegundos
 function draw() {
 
@@ -148,8 +153,8 @@ function draw() {
       } else {
         x = canvas.width / 2;
         y = canvas.height - 30;
-        dx = 2;
-        dy = -2;
+        dx = 3;
+        dy = -3;
         paddleX = (canvas.width - paddleWidth) / 2;
       }
     }
@@ -170,20 +175,20 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-
 //Con estos listeners, obtenemos respuesta cuando las teclas se pulsan
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
 //Con este listener detectamos el movimiento del raton
-document.addEventListener("mousemove", mouseMoveHandler, false);
+//document.addEventListener("mousemove", mouseMoveHandler, false);
 
 //declaramos la funcion que permite mover la paleta con el raton
-function mouseMoveHandler(e) {
-  var relativeX = e.clientX - canvas.offsetLeft;
-  if (relativeX > 0 && relativeX < canvas.width) {
-    paddleX = relativeX - paddleWidth / 2;
-  }
-}
+// function mouseMoveHandler(e) {
+//   var relativeX = e.clientX - canvas.offsetLeft;
+//   if (relativeX > 0 && relativeX < canvas.width) {
+//     paddleX = relativeX - paddleWidth / 2;
+//   }
+// }
 
 function keyDownHandler(e) {
   if (e.keyCode == 39) {
@@ -212,8 +217,16 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if (score == brickRowCount * brickColumnCount) {
-            alert("Que bueno que ganaste");
-            document.location.reload();
+            // alert("Que bueno que ganaste");
+            // document.location.reload();
+            swal({
+              title: "Good job!",
+              text: "You clicked the button!",
+              icon: "success",
+              button: "Aww yiss!",
+            });
+            draw.break();
+
           }
         }
       }
@@ -221,4 +234,13 @@ function collisionDetection() {
   }
 }
 
-draw();
+
+function launchGame() {
+  var name = document.getElementById('name').value;
+  document.getElementById('landing').style.height = '0px';
+  document.getElementById("landing").style.width = "0px";
+  //aplicamos un delay de 1 segundos antes de mepezar el juego
+  setTimeout(function() {
+    draw()
+  }, 1000);
+} //FIN funcion launchGame

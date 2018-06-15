@@ -11,7 +11,7 @@ var ballRadius = 10;
 
 //definimos la paleta que movera el usuario
 var paddleHeight = 15;
-var paddleWidth = 75;
+var paddleWidth = 100;
 var paddleX = (canvas.width - paddleWidth) / 2;
 
 //definimos 2 variables de control para cuando el usuario pulse el teclado
@@ -57,7 +57,7 @@ var lives = 3;
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-  ctx.fillStyle = "#0095DD";
+  ctx.fillStyle = "red";
   ctx.fill();
   ctx.closePath();
 }
@@ -82,7 +82,7 @@ function drawBricks() {
         bricks[c][r].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#186f35";
         ctx.fill();
         ctx.closePath();
       }
@@ -116,11 +116,14 @@ function draw() {
   drawPaddle();
 
   //llamamos a la funcion que dibuja la puntuacion
-  drawScore();
+  //drawScore();
+  document.getElementById('score').innerHTML = 'Score:' + score;
 
   //llamamos a la funcion que dibuja las vidas
-  drawLives();
+  //drawLives();
+  document.getElementById('lives').innerHTML = 'Lives' + lives;
 
+draw.break();
   //llamamos la funcion que detecta las colisiones entre la pelota y los ladrillos
   collisionDetection();
 
@@ -148,8 +151,14 @@ function draw() {
     } else {
       lives--;
       if (!lives) {
-        alert("GAME OVER");
-        document.location.reload();
+        //alert("GAME OVER");
+        //document.location.reload();
+        swal({
+          title: "Looser!",
+          icon: "error",
+          button: "Exit",
+        });
+        draw.break();
       } else {
         x = canvas.width / 2;
         y = canvas.height - 30;
@@ -244,7 +253,9 @@ function launchGame() {
   }else{
   document.getElementById('landing').style.height = '0px';
   document.getElementById("landing").style.width = "0px";
+  document.getElementById('title').style.visibility = 'visible';
   document.getElementById('myCanvas').style.visibility = 'visible';
+
 
   //aplicamos un delay de 1 segundos antes de mepezar el juego
   setTimeout(function() {

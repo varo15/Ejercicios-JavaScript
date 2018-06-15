@@ -46,8 +46,9 @@ var score = 0;
 var lives = 3;
 
 //declaramos variables de audio
-
-
+var pop = document.getElementById('brickAudio');
+var mario = document.getElementById('mario');
+var nigga = document.getElementById('nigga');
 // -------- FIN DECLARACION VARIABLES -------- //
 
 
@@ -90,25 +91,10 @@ function drawBricks() {
   }
 }
 
-//creamos la funcion que dibuja la puntuacion
-function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: " + score, 8, 20);
-}
-
-//creamos la funcion que dibuja las vidas
-function drawLives() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
-}
-
 
 
 //creamos una funcion que ira dibujando y actualizandose cada 10 milisegundos
 function draw() {
-
   //borramos el lienzo para pintar en uno vacio
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -117,13 +103,12 @@ function draw() {
 
   //llamamos a la funcion que dibuja la puntuacion
   //drawScore();
-  document.getElementById('score').innerHTML = 'Score:' + score;
+  document.getElementById('score').innerHTML = 'Score: ' + score;
 
   //llamamos a la funcion que dibuja las vidas
   //drawLives();
-  document.getElementById('lives').innerHTML = 'Lives' + lives;
+  document.getElementById('lives').innerHTML = 'Lives: ' + lives;
 
-draw.break();
   //llamamos la funcion que detecta las colisiones entre la pelota y los ladrillos
   collisionDetection();
 
@@ -153,6 +138,7 @@ draw.break();
       if (!lives) {
         //alert("GAME OVER");
         //document.location.reload();
+        win.play();
         swal({
           title: "Looser!",
           icon: "error",
@@ -225,6 +211,7 @@ function collisionDetection() {
           dy = -dy;
           b.status = 0;
           score++;
+          pop.play();
           if (score == brickRowCount * brickColumnCount) {
             // alert("Que bueno que ganaste");
             // document.location.reload();
@@ -234,6 +221,7 @@ function collisionDetection() {
               icon: "success",
               button: "Aww yiss!",
             });
+            win.play();
             draw.break();
 
           }
@@ -250,16 +238,17 @@ function launchGame() {
   //dejar el nombre en blanco
   if (name.length == 0) {
     document.getElementById('errorLabel').style.visibility = 'visible';
-  }else{
-  document.getElementById('landing').style.height = '0px';
-  document.getElementById("landing").style.width = "0px";
-  document.getElementById('title').style.visibility = 'visible';
-  document.getElementById('myCanvas').style.visibility = 'visible';
+  } else {
+    mario.play();
+    document.getElementById('landing').style.visibility = 'hidden';
+    document.getElementById('title').style.visibility = 'visible';
+    document.getElementById('myCanvas').style.visibility = 'visible';
 
 
-  //aplicamos un delay de 1 segundos antes de mepezar el juego
-  setTimeout(function() {
-    draw()
-  }, 1000);
-}
+    //aplicamos un delay de 1 segundos antes de mepezar el juego
+    setTimeout(function() {
+      draw()
+
+    }, 4000);
+  }
 } //FIN funcion launchGame

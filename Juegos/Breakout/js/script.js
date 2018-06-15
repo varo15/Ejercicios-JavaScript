@@ -39,6 +39,7 @@ for (c = 0; c < brickColumnCount; c++) {
   }
 }
 
+var name = document.getElementById('name').value;
 //declaramos la variable para el contador de puntos
 var score = 0;
 
@@ -138,9 +139,9 @@ function draw() {
       if (!lives) {
         //alert("GAME OVER");
         //document.location.reload();
-        win.play();
+        nigga.play();
         swal({
-          title: "Looser!",
+          title: name + " you ar a looser!",
           icon: "error",
           button: "Exit",
         });
@@ -216,10 +217,9 @@ function collisionDetection() {
             // alert("Que bueno que ganaste");
             // document.location.reload();
             swal({
-              title: "Good job!",
-              text: "You clicked the button!",
+              title: "Good job " + name + "!",
               icon: "success",
-              button: "Aww yiss!",
+              button: "Nice",
             });
             win.play();
             draw.break();

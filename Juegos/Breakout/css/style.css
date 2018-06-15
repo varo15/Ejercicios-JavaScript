@@ -4,16 +4,18 @@
 }
 
 body {
-  background: rgba(76, 76, 76, 1);
+  /*background: rgba(76, 76, 76, 1);*/
   font-family: 'Roboto', sans-serif;
+  background-image: url("../images/images.jpg");
 }
 
 canvas {
   background: #eee;
+  /*meter opaciti con rgb */
   display: block;
   margin: 10% auto;
   visibility: hidden;
-  
+
 }
 
 #landing {
@@ -80,4 +82,5 @@ canvas {
   background-image: -o-linear-gradient(top, #99bd7b, #6bab6a);
   background-image: linear-gradient(to bottom, #99bd7b, #6bab6a);
   text-decoration: none;
+  cursor: pointer;
 }

@@ -39,7 +39,11 @@ for (c = 0; c < brickColumnCount; c++) {
   }
 }
 
+<<<<<<< HEAD
+
+=======
 var name = document.getElementById('name').value;
+>>>>>>> c930b4ff57b2ef09ff18c7bf911d6a25671d21c1
 //declaramos la variable para el contador de puntos
 var score = 0;
 
@@ -50,6 +54,11 @@ var lives = 3;
 var pop = document.getElementById('brickAudio');
 var mario = document.getElementById('mario');
 var nigga = document.getElementById('nigga');
+<<<<<<< HEAD
+var win = document.getElementById('win');
+var mainAudio = document.getElementById('mainAudio');
+=======
+>>>>>>> c930b4ff57b2ef09ff18c7bf911d6a25671d21c1
 // -------- FIN DECLARACION VARIABLES -------- //
 
 
@@ -96,6 +105,11 @@ function drawBricks() {
 
 //creamos una funcion que ira dibujando y actualizandose cada 10 milisegundos
 function draw() {
+<<<<<<< HEAD
+  var name = document.getElementById('name').value;
+
+=======
+>>>>>>> c930b4ff57b2ef09ff18c7bf911d6a25671d21c1
   //borramos el lienzo para pintar en uno vacio
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -139,12 +153,25 @@ function draw() {
       if (!lives) {
         //alert("GAME OVER");
         //document.location.reload();
+<<<<<<< HEAD
+        mainAudio.pause();
+        nigga.play();
+        swal({
+          title: name + " you are a looser!",
+          icon: "error",
+          button: "Try again"
+        }).then(function(){
+   location.reload();
+   }
+);
+=======
         nigga.play();
         swal({
           title: name + " you ar a looser!",
           icon: "error",
           button: "Exit",
         });
+>>>>>>> c930b4ff57b2ef09ff18c7bf911d6a25671d21c1
         draw.break();
       } else {
         x = canvas.width / 2;
@@ -169,22 +196,12 @@ function draw() {
     paddleX -= 7;
   }
   requestAnimationFrame(draw);
-}
+} //FIN function draw
 
 //Con estos listeners, obtenemos respuesta cuando las teclas se pulsan
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
-//Con este listener detectamos el movimiento del raton
-//document.addEventListener("mousemove", mouseMoveHandler, false);
-
-//declaramos la funcion que permite mover la paleta con el raton
-// function mouseMoveHandler(e) {
-//   var relativeX = e.clientX - canvas.offsetLeft;
-//   if (relativeX > 0 && relativeX < canvas.width) {
-//     paddleX = relativeX - paddleWidth / 2;
-//   }
-// }
 
 function keyDownHandler(e) {
   if (e.keyCode == 39) {
@@ -204,6 +221,7 @@ function keyUpHandler(e) {
 
 //Declaramos la funcion con la que detectamos las colisiones de los ladrillos y la pelota
 function collisionDetection() {
+  var name = document.getElementById('name').value;
   for (c = 0; c < brickColumnCount; c++) {
     for (r = 0; r < brickRowCount; r++) {
       var b = bricks[c][r];
@@ -216,12 +234,18 @@ function collisionDetection() {
           if (score == brickRowCount * brickColumnCount) {
             // alert("Que bueno que ganaste");
             // document.location.reload();
+            mainAudio.pause();
+            win.play();
             swal({
               title: "Good job " + name + "!",
               icon: "success",
               button: "Nice",
             });
+<<<<<<< HEAD
+
+=======
             win.play();
+>>>>>>> c930b4ff57b2ef09ff18c7bf911d6a25671d21c1
             draw.break();
 
           }
@@ -237,15 +261,26 @@ function launchGame() {
   //controlamos un posible error
   //dejar el nombre en blanco
   if (name.length == 0) {
+    //ponemos visible la equiqueta de error
     document.getElementById('errorLabel').style.visibility = 'visible';
   } else {
+<<<<<<< HEAD
+
     mario.play();
+    document.getElementById('errorLabel').style.visibility = 'hidden';
+=======
+    mario.play();
+>>>>>>> c930b4ff57b2ef09ff18c7bf911d6a25671d21c1
     document.getElementById('landing').style.visibility = 'hidden';
     document.getElementById('title').style.visibility = 'visible';
     document.getElementById('myCanvas').style.visibility = 'visible';
 
 
+<<<<<<< HEAD
+    //aplicamos un delay de 4 segundos antes de mepezar el juego
+=======
     //aplicamos un delay de 1 segundos antes de mepezar el juego
+>>>>>>> c930b4ff57b2ef09ff18c7bf911d6a25671d21c1
     setTimeout(function() {
       draw()
 
